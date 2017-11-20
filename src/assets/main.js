@@ -18,7 +18,7 @@ function guess() {
       setMessage( "You Win! :)" );
       showAnswer(true);
       showReplay();
-    } else if (!getResults() && attempt >= 10) {
+    } else if (!getResults(input) && attempt >= 10) {
       setMessage( "You Lose! :(" );
       showAnswer(false);
       showReplay();
@@ -51,11 +51,26 @@ function validateInput(input) {
 }
 
 function getResults(input) {
-  document.getElementById('results').innerHTML = '<div class="row"><span class="col-md-6">' + input + '</span><div class="col-md-6">';
+  let numCorrect = 0;
+  let resultsDiv = document.getElementById('results');
+  let inner = '<div class="row"><span class="col-md-6">';
+  let ans = answer.value.split('');
+  let guess = input.value.toString().split('');
 
-  let numCorrect = 4;
+  for (let i = 0; i < 4; i++) {
+    if(guess[i] === ans[i]) {
+      inner = inner + '<span class="glyphicon glyphicon-ok"></span>';
+    } else if (ans.includes(guess[i])) {
+      inner = inner + '<span class="glyphicon glyphicon-transfer"></span>';
+    } else {
+      inner = inner + '<span class="glyphicon glyphicon-remove"></span>';
+    }
+  }
 
-  numCorrect === 4 ? true : false;
+  inner = inner + '</span><div class="col-md-6">';
+  resultsDiv.innerHTML = inner;
+
+  return numCorrect === 4 ? true : false;
 }
 
 function showAnswer(input) {
