@@ -75,7 +75,7 @@ function getResults(input) {
 
 function showAnswer(input) {
   let codeElem = document.getElementById('code');
-  codeElem.innerHTML(answer);
+  codeElem.innerHTML = answer;
   input ? codeelem.addClass(' success') : codeElem.addClass(' failure');
 }
 
