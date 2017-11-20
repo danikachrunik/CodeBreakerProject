@@ -28,8 +28,8 @@ function guess() {
 }
 
 function setHiddenFields() {
-  attempt.innerHTML = "0";
-  answer.innerHTML = Math.floor( Math.random() * 9999 ).toString();
+  attempt.value = "0";
+  answer.value = Math.floor( Math.random() * 9999 ).toString();
 
   while(answer.length < 4) {
     answer = "0" + answer;
