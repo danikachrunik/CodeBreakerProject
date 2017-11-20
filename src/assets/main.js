@@ -32,8 +32,8 @@ function setHiddenFields() {
 
   while(randomNum.length < 4) {
     randomNum = "0" + randomNum;
-    answer.value = randomNum;
   }
+  answer.value = randomNum;
   attempt.value = "0";
 }
 
