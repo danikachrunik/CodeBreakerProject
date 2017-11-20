@@ -28,12 +28,13 @@ function guess() {
 }
 
 function setHiddenFields() {
-  attempt.value = "0";
-  answer.value = Math.floor( Math.random() * 9999 ).toString();
+  let randomNum = Math.floor( Math.random() * 9999 ).toString();
 
-  while(answer.length < 4) {
-    answer = "0" + answer;
+  while(randomNum.length < 4) {
+    randomNum = "0" + randomNum;
+    answer.value = randomNum;
   }
+  attempt.value = "0";
 }
 
 function setMessage(newMessage) {
