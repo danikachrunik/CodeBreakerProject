@@ -76,9 +76,9 @@ function getResults(input) {
 function showAnswer(input) {
   let codeElem = document.getElementById('code');
   codeElem.innerHTML = answer;
-  input ? codeelem.addClass(' success') : codeElem.addClass(' failure');
+  input ? codeElem.addClass(' success') : codeElem.addClass(' failure');
 }
 
 function showReplay() {
-  document.getElementById('guessing-div').css({display: "block"});
+  document.getElementById('guessing-div').style.display = 'block';
 }
